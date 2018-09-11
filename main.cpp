@@ -72,4 +72,11 @@ TEST_CASE( "Test quicksort with various inputs", "[quicksort]" ) {
         REQUIRE(is_sorted(v_sorted.begin(), v_sorted.end()));
         REQUIRE(is_sorted(v_unsorted.begin(), v_unsorted.end()));
     }
+    
+    SECTION("Large vector indentical ints")
+    {
+        vector<int> v_indentical(LARGE_VEC_SIZE, 12);
+        quicksort(v_indentical, 0 ,v_indentical.size());
+        REQUIRE(is_sorted(v_indentical.begin(), v_indentical.end()));
+    }
 }
